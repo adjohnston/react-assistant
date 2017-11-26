@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "Web Speech Recognition API turned into a React component",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch"
+  },
   "repository": "git+https://github.com/adjohnston/speech-recognition-react.git",
   "keywords": [
     "react",
@@ -19,5 +22,8 @@
   "homepage": "https://github.com/adjohnston/speech-recognition-react#readme",
   "dependencies": {
     "jest": "^21.2.1"
+  },
+  "jest": {
+    "collectCoverageFrom": ["src/**/*.js"]
   }
 }
