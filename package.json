@@ -1,0 +1,20 @@
+{
+  "name": "speech-recognition-react",
+  "version": "0.0.1",
+  "description": "Web Speech Recognition API turned into a React component",
+  "main": "index.js",
+  "scripts": {},
+  "repository": "git+https://github.com/adjohnston/speech-recognition-react.git",
+  "keywords": [
+    "react",
+    "speech",
+    "recognition",
+    "component"
+  ],
+  "author": "Adam Johnston",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adjohnston/speech-recognition-react/issues"
+  },
+  "homepage": "https://github.com/adjohnston/speech-recognition-react#readme"
+}
