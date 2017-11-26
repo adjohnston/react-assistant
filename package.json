@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/adjohnston/speech-recognition-react/issues"
   },
-  "homepage": "https://github.com/adjohnston/speech-recognition-react#readme"
+  "homepage": "https://github.com/adjohnston/speech-recognition-react#readme",
+  "dependencies": {
+    "jest": "^21.2.1"
+  }
 }
