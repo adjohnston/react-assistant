@@ -4,9 +4,9 @@ export default {
   entry: resolve(__dirname, "src/index.js"),
 
   output: {
-    filename: "speech-recognition.js",
+    filename: "react-assistant.js",
     path: resolve(__dirname, "dist"),
-    library: "speechRecognition",
+    library: "reactAssistant",
     libraryTarget: "umd"
   },
 

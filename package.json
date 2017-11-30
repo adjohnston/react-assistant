@@ -1,8 +1,8 @@
 {
-  "name": "speech-recognition-react",
+  "name": "react-assistant",
   "version": "0.0.1",
   "description": "Web Speech Recognition API turned into a React component",
-  "main": "dist/speech-recognition.js",
+  "main": "dist/react-assistant.js",
   "scripts": {
     "build": "webpack",
     "build:watch": "webpack -w",
@@ -10,7 +10,7 @@
     "test:watch": "jest --coverage --watch",
     "publish": "webpack -p"
   },
-  "repository": "git+https://github.com/adjohnston/speech-recognition-react.git",
+  "repository": "git+https://github.com/adjohnston/react-assistant.git",
   "keywords": [
     "react",
     "speech",
@@ -20,9 +20,9 @@
   "author": "Adam Johnston",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adjohnston/speech-recognition-react/issues"
+    "url": "https://github.com/adjohnston/react-assistant/issues"
   },
-  "homepage": "https://github.com/adjohnston/speech-recognition-react#readme",
+  "homepage": "https://github.com/adjohnston/react-assistant#readme",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
