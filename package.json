@@ -8,7 +8,7 @@
     "build:watch": "webpack -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
-    "publish": "webpack -p"
+    "prepublish": "webpack -p"
   },
   "repository": "git+https://github.com/adjohnston/react-assistant.git",
   "keywords": [
