@@ -1,0 +1,39 @@
+{
+  "name": "react-assistant",
+  "version": "0.0.1",
+  "description": "Web Speech Recognition API turned into a React component",
+  "main": "dist/react-assistant.js",
+  "scripts": {
+    "build": "webpack",
+    "build:watch": "webpack -w",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
+    "publish": "webpack -p"
+  },
+  "repository": "git+https://github.com/adjohnston/react-assistant.git",
+  "keywords": [
+    "react",
+    "speech",
+    "recognition",
+    "component"
+  ],
+  "author": "Adam Johnston",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adjohnston/react-assistant/issues"
+  },
+  "homepage": "https://github.com/adjohnston/react-assistant#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^21.2.1",
+    "webpack": "^3.8.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  }
+}
