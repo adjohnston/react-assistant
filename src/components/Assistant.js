@@ -1,12 +1,40 @@
 import React, { Component, Children, cloneElement } from 'react'
 import PropTypes from 'prop-types'
 
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+
 export default class Assistant extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
       isListening: false
+    }
+
+    this.recognition = new SpeechRecognition()
+    this.recognition.onsoundstart = () => console.log('I am Listening')
+    this.recognition.onsoundend = () => console.log('I am not listening')
+    this.recognition.onend = () => {
+      this.state.isListening
+        ? this.recognition.start()
+        : console.log('not listening');
+    }
+
+    this.recognition.onresult = ({ results }) => {
+      const {
+        confidence,
+        transcript
+      } = results[0][0]
+
+      if (results[0].isFinal) {
+        this.props.actions.forEach(action => {
+          const identifier = Object.keys(action)[0]
+
+          transcript.includes(identifier)
+            ? action[identifier]()
+            : null
+        })
+      }
     }
   }
 
