@@ -18,6 +18,14 @@ export default class Assistant extends Component {
     })
   }
 
+  componentDidUpdate() {
+    if (this.state.isListening) {
+      this.recognition.start()
+    } else {
+      this.recognition.stop()
+    }
+  }
+
   render() {
     const isListening = this.state.isListening
     const children = this.props.children
