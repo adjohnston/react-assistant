@@ -62,13 +62,19 @@ export default class Assistant extends Component {
       return null
 
     return Children.map(children, child => {
-      if (child.type.name === 'Switch')
-        return cloneElement(child, {
-          isListening,
-          clickHandler: this.toggleListening
-        })
+      switch (child.type.name) {
+        case 'Switch':
+          return cloneElement(child, {
+            isListening,
+            clickHandler: this.toggleListening
+          })
 
-      return child
+        case 'StatusBar':
+          return cloneElement(child, { isListening })
+
+        default:
+          return child
+      }
     })
   }
 }
