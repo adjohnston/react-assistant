@@ -58,6 +58,9 @@ export default class Assistant extends Component {
     const isListening = this.state.isListening
     const children = this.props.children
 
+    if (!SpeechRecognition)
+      return null
+
     return Children.map(children, child => {
       if (child.type.name === 'Switch')
         return cloneElement(child, {
