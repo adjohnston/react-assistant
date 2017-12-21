@@ -14,23 +14,21 @@ export default class Assistant extends Component {
     this.recognition = new SpeechRecognition()
 
     this.recognition.onend = () => {
-      this.state.isListening
-        ? this.recognition.start()
-        : console.log('not listening');
+      if (this.state.isListening)
+        this.recognition.start()
     }
 
-    this.recognition.onresult = ({ results }) => {
+    this.recognition.onresult = event => {
       const {
-        confidence,
         transcript
-      } = results[0][0]
+      } = event.results[0][0]
 
-      if (results[0].isFinal) {
+      if (event.results[0].isFinal) {
         this.props.actions.forEach(action => {
           const identifier = Object.keys(action)[0]
 
           transcript.includes(identifier)
-            ? action[identifier]()
+            ? action[identifier].call(this, event)
             : null
         })
       }
