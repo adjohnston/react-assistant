@@ -11,27 +11,14 @@ export default class Assistant extends Component {
       isListening: false
     }
 
-    this.recognition = new SpeechRecognition()
+    this.initSpeechRecognition()
+  }
 
-    this.recognition.onend = () => {
-      if (this.state.isListening)
-        this.recognition.start()
-    }
-
-    this.recognition.onresult = event => {
-      const {
-        transcript
-      } = event.results[0][0]
-
-      if (event.results[0].isFinal) {
-        this.props.actions.forEach(action => {
-          const identifier = Object.keys(action)[0]
-
-          transcript.includes(identifier)
-            ? action[identifier].call(this, event)
-            : null
-        })
-      }
+  componentDidUpdate() {
+    if (this.state.isListening) {
+      this.recognition.start()
+    } else {
+      this.recognition.stop()
     }
   }
 
@@ -43,11 +30,30 @@ export default class Assistant extends Component {
     })
   }
 
-  componentDidUpdate() {
-    if (this.state.isListening) {
-      this.recognition.start()
-    } else {
-      this.recognition.stop()
+  initSpeechRecognition = () => {
+    if (SpeechRecognition) {
+      this.recognition = new SpeechRecognition()
+
+      this.recognition.onend = () => {
+        if (this.state.isListening)
+          this.recognition.start()
+      }
+
+      this.recognition.onresult = event => {
+        const {
+          transcript
+        } = event.results[0][0]
+
+        if (event.results[0].isFinal) {
+          this.props.actions.forEach(action => {
+            const identifier = Object.keys(action)[0]
+
+            transcript.includes(identifier)
+              ? action[identifier].call(this, event)
+              : null
+          })
+        }
+      }
     }
   }
 
