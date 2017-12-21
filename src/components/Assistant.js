@@ -12,8 +12,7 @@ export default class Assistant extends Component {
     }
 
     this.recognition = new SpeechRecognition()
-    this.recognition.onsoundstart = () => console.log('I am Listening')
-    this.recognition.onsoundend = () => console.log('I am not listening')
+
     this.recognition.onend = () => {
       this.state.isListening
         ? this.recognition.start()
