@@ -11,7 +11,7 @@ export default class Assistant extends Component {
       isListening: false
     }
 
-    this.initSpeechRecognition()
+    this.init()
   }
 
   componentDidUpdate() {
@@ -22,7 +22,7 @@ export default class Assistant extends Component {
     }
   }
 
-  toggleListening = () => {
+  toggle = () => {
     this.setState(state => {
       return {
         isListening: !state.isListening
@@ -30,7 +30,7 @@ export default class Assistant extends Component {
     })
   }
 
-  initSpeechRecognition = () => {
+  init = () => {
     if (SpeechRecognition) {
       this.recognition = new SpeechRecognition()
 
@@ -69,7 +69,7 @@ export default class Assistant extends Component {
         case 'Switch':
           return cloneElement(child, {
             isListening,
-            clickHandler: this.toggleListening
+            clickHandler: this.toggle
           })
 
         case 'StatusBar':
