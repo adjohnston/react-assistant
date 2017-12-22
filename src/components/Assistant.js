@@ -4,22 +4,8 @@ import PropTypes from 'prop-types'
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
 
 export default class Assistant extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      isListening: false
-    }
-
-    this.init()
-  }
-
-  componentDidUpdate() {
-    if (this.state.isListening) {
-      this.recognition.start()
-    } else {
-      this.recognition.stop()
-    }
+  state = {
+    isListening: false
   }
 
   toggle = () => {
@@ -54,6 +40,18 @@ export default class Assistant extends Component {
           })
         }
       }
+    }
+  }
+
+  componentDidMount() {
+    this.init()
+  }
+
+  componentDidUpdate() {
+    if (this.state.isListening) {
+      this.recognition.start()
+    } else {
+      this.recognition.stop()
     }
   }
 
