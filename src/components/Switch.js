@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Switch = ({ children, isListening, clickHandler }) => {
+const Switch = ({ children, isListening, actionHandler }) => {
   if (children)
-    return children(isListening, clickHandler)
+    return children(isListening, actionHandler)
 
   return (
     <button
-      onClick={clickHandler}>
+      onClick={actionHandler}>
       {isListening ? 'on' : 'off'}
     </button>
   )
@@ -15,7 +15,7 @@ const Switch = ({ children, isListening, clickHandler }) => {
 
 Switch.propTypes = {
   isListening: PropTypes.bool,
-  clickHandler: PropTypes.func,
+  actionHandler: PropTypes.func,
   children: PropTypes.func
 }
 

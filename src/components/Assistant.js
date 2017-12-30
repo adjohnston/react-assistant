@@ -67,7 +67,7 @@ export default class Assistant extends Component {
         case 'Switch':
           return cloneElement(child, {
             isListening,
-            clickHandler: this.toggle
+            actionHandler: this.toggle
           })
 
         case 'StatusBar':
