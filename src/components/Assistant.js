@@ -62,6 +62,9 @@ export default class Assistant extends Component {
     if (!this.SpeechRecognition)
       return null
 
+    if (Children.count(children) === 0)
+      return null
+
     return Children.map(children, child => {
       switch (child.type.name) {
         case 'Switch':
