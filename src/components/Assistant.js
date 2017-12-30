@@ -1,9 +1,9 @@
 import React, { Component, Children, cloneElement } from 'react'
 import PropTypes from 'prop-types'
 
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
-
 export default class Assistant extends Component {
+  SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+
   state = {
     isListening: false
   }
@@ -17,8 +17,8 @@ export default class Assistant extends Component {
   }
 
   init = () => {
-    if (SpeechRecognition) {
-      this.recognition = new SpeechRecognition()
+    if (this.SpeechRecognition) {
+      this.recognition = new this.SpeechRecognition()
 
       this.recognition.onend = () => {
         if (this.state.isListening)
@@ -59,7 +59,7 @@ export default class Assistant extends Component {
     const isListening = this.state.isListening
     const children = this.props.children
 
-    if (!SpeechRecognition)
+    if (!this.SpeechRecognition)
       return null
 
     return Children.map(children, child => {
