@@ -35,9 +35,13 @@
     "babel-preset-react": "^6.24.1",
     "jest": "^21.2.1",
     "prop-types": "^15.6.0",
+    "react-test-renderer": "^16.2.0",
     "webpack": "^3.8.1"
   },
   "jest": {
+    "moduleNameMapper": {
+      "^src(.*)$": "<rootDir>/src$1"
+    },
     "collectCoverageFrom": [
       "src/**/*.js"
     ]
