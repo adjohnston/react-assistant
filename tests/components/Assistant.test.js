@@ -9,6 +9,17 @@ const mockProps = {
   }]
 }
 
+beforeAll(() => {
+  window.SpeechRecognition = () => ({
+    start: () => {},
+    stop: () => {}
+  })
+})
+
+afterAll(() => {
+  window.SpeechRecognition = null
+})
+
 test('it should render null given no SpeechRecognition API', () => {
   const tree = renderer
     .create(<Assistant {...mockProps} />)
@@ -18,8 +29,6 @@ test('it should render null given no SpeechRecognition API', () => {
 })
 
 test('it should render null given no children', () => {
-  window.SpeechRecognition = jest.fn()
-
   const tree = renderer
     .create(<Assistant {...mockProps} />)
     .toJSON()
@@ -28,8 +37,6 @@ test('it should render null given no children', () => {
 })
 
 test('it should render correctly with a default Switch component', () => {
-  window.SpeechRecognition = jest.fn()
-
   const Component = (
     <Assistant {...mockProps}>
       <Switch />
