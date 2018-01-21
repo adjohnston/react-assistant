@@ -33,7 +33,7 @@ export default class Assistant extends Component {
     const isListening = this.state.isListening
     const children = this.props.children
 
-    if (!this.SpeechRecognition)
+    if (!this.recognition)
       return null
 
     if (Children.count(children) === 0)
