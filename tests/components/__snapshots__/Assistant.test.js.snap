@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`clicking the button should change the state of the button from off to on 1`] = `
+<button
+  onClick={[Function]}
+>
+  on
+</button>
+`;
+
+exports[`it should render correctly with a custom Switch component 1`] = `
+<div
+  onClick={[Function]}
+>
+  I'm not listening
+</div>
+`;
+
+exports[`it should render correctly with a default Switch component 1`] = `
+<button
+  onClick={[Function]}
+>
+  off
+</button>
+`;
+
+exports[`it should render null given no SpeechRecognition API 1`] = `null`;
+
+exports[`it should render null given no children 1`] = `null`;

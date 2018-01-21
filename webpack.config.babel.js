@@ -6,7 +6,7 @@ export default {
   output: {
     filename: "react-assistant.js",
     path: resolve(__dirname, "dist"),
-    library: "reactAssistant",
+    library: "react-assistant",
     libraryTarget: "umd"
   },
 
