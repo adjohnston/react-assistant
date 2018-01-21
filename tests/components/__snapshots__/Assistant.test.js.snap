@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`clicking the button should change the state of the button from off to on 1`] = `
+<button
+  onClick={[Function]}
+>
+  on
+</button>
+`;
+
 exports[`it should render correctly with a custom Switch component 1`] = `
 <div
   onClick={[Function]}

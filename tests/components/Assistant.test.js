@@ -50,9 +50,27 @@ test('it should render correctly with a default Switch component', () => {
   expect(tree).toMatchSnapshot()
 })
 
-test('it should render correctly with a custom Switch component', () => {
-  window.SpeechRecognition = jest.fn()
+test('clicking the button should change the state of the button from off to on', () => {
+  const Component = (
+    <Assistant {...mockProps}>
+      <Switch />
+    </Assistant>
+  )
 
+  const component = renderer
+    .create(Component)
+
+  component
+    .getInstance()
+    .toggle()
+
+  const tree = component
+    .toJSON()
+
+  expect(tree).toMatchSnapshot()
+})
+
+test('it should render correctly with a custom Switch component', () => {
   const Component = (
     <Assistant {...mockProps}>
       <Switch>
