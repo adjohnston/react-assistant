@@ -15,7 +15,7 @@ export default class Assistant extends Component {
     })
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
 
     setup.call(this, SpeechRecognition)
