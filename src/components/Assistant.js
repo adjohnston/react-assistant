@@ -8,11 +8,9 @@ export default class Assistant extends Component {
   }
 
   toggle = () => {
-    this.setState(state => {
-      return {
-        isListening: !state.isListening
-      }
-    })
+    this.setState(state => ({
+      isListening: !state.isListening
+    }))
   }
 
   componentWillMount() {
