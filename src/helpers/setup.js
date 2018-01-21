@@ -1,6 +1,6 @@
-export default function setup() {
-  if (this.SpeechRecognition) {
-    this.recognition = new this.SpeechRecognition()
+export default function setup(SpeechRecognition) {
+  if (SpeechRecognition) {
+    this.recognition = new SpeechRecognition()
 
     this.recognition.onend = () => {
       if (this.state.isListening)

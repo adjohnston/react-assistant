@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import setup from 'src/helpers/setup'
 
 export default class Assistant extends Component {
-  SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
-
   state = {
     isListening: false
   }
@@ -18,7 +16,9 @@ export default class Assistant extends Component {
   }
 
   componentDidMount() {
-    setup.call(this)
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+
+    setup.call(this, SpeechRecognition)
   }
 
   componentDidUpdate() {
